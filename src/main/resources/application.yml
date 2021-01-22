@@ -1,0 +1,37 @@
+#spring:
+#  security:
+#    user:
+#      name: buzz
+#      password: infinity
+spring:
+  h2:
+    console:
+      enabled: true
+      settings.web-allow-others: true
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+taco:
+  orders:
+    pageSize: 10
+
+
+  discount:
+    codes:
+      abcdef: 10
+---
+spring:
+  profiles: prod
+  
+  datasource:
+    url: jdbc:mysql://localhost/tacocloud
+    username: tacouser
+    password: tacopassword
+    
+logging:
+  level:
+    tacos: WARN
+    
